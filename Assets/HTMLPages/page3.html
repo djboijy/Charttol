@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Мета-теги для надання інформації про сторінку -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Charttol - Professional data visualization. Page 3: Graph Customization.">
+    <meta name="keywords" content="Charts, generation, tool, customization, settings, graph, visualization, data visualization">
+    <meta name="author" content="Dmytro Bondarchuk">
+
+    <title>ChartTol</title>
+
+    <!-- Імпорт іконок та шрифтів -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Імпорт зовнішніх CSS -->
+    <link rel="stylesheet" href="../../CSS/main.css">
+    <link rel="stylesheet" href="../../CSS/charts.css">
+    <link rel="stylesheet" href="../../CSS/buttons.css">
+    <link rel="stylesheet" href="../../CSS/Page-Exclusive%20Styles/page3Styles.css">
+    <link rel="stylesheet" href="../../CSS/Page-Exclusive%20Styles/page1Styles.css">
+</head>
+<body>
+
+<header>
+    <!-- Заголовок та верх сторінки -->
+    <h1 id="web-title">ChartTol</h1>
+    <img class="header-logo-image" src="../../Assets/Icons/HeaderLogo.svg" alt="Charttol - Our Logo">
+    <button id="theme-button" class="material-icons">brightness_4</button>
+</header>
+
+<!-- Контент свмої сторінки -->
+<main>
+    <section id="page-content">
+        <h2>Customize Your Chart</h2>
+
+        <div class="input-group">
+            <label for="chart-title" style="color: white;">Chart Title:</label>
+            <input type="text" id="chart-title" placeholder="Enter chart title" class="input-field">
+        </div>
+
+        <div class="input-group">
+            <label for="x-axis" style="color: white;">X-Axis Label:</label>
+            <input type="text" id="x-axis" placeholder="Enter X-axis label" class="input-field">
+        </div>
+
+        <div class="input-group">
+            <label for="y-axis" style="color: white;">Y-Axis Label:</label>
+            <input type="text" id="y-axis" placeholder="Enter Y-axis label" class="input-field">
+        </div>
+
+        <!-- Поле для вибору кольору - з відкриттям спец. вікна -->
+        <div class="input-group">
+            <label for="labels-color-picker" style="color: white;">Select Label Colors: (Supported only three, more coming soon! For manual data, optional for file data.)</label> <br/>
+            <input type="color" id="labels-color-picker" class="input-field" style="width: 1097px">
+        </div>
+
+        <div class="input-group">
+            <label for="line-style" style="color: white;">Line Style: (Doesn't apply for Bar Charts)</label>
+            <select id="line-style" class="input-field" style="width: 1097px;">
+                <option value="solid">Solid</option>
+                <option value="dashed">Dashed</option>
+                <option value="dotted">Dotted</option>
+            </select>
+        </div>
+
+        <!-- Кнопки навігації(Next, Back) та кнопка Reset -->
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <button id="back-button" class="navigation-button" style="width: 150px; margin-left: 0">Back</button>
+            <button id="reset-button" class="navigation-button" style="width: 150px; color: orangered; background-color: #ffde00; margin-top: 20px">Reset</button>
+            <button id="next-button" class="navigation-button" style="width: 370px; background-color: green; margin-top: 17px; margin-left: 636px; height: 90px">Finish Chart For File</button>
+            <button id="next-but2" class="navigation-button" style="height: 90px; width: 370px">Finish Chart For Manual</button>
+        </div>
+    </section>
+</main>
+
+<!-- Нижній футер з додатковою інформацією про розробника -->
+<footer>
+    <p style="color: white;">Made by Dmytro Bondarchuk</p>
+</footer>
+
+<!------------------------------------------------------------>
+<!-- Вікно для кольорів -->
+<div class="overlay" id="color-main">
+    <div class="color-change-window" id="color-change-win-id">
+        <h1 id="choose-colors-window-header" style="text-align: center; margin-left: -42px; margin-bottom: 40px">Choose Colors:</h1>
+
+        <div class="color-picker">
+            <label for="label1-color">Label 1:</label>
+            <input type="color" id="label1-color" value="#ff0000">
+        </div>
+
+        <div class="color-picker">
+            <label for="label2-color">Label 2:</label>
+            <input type="color" id="label2-color" value="#00ff00">
+        </div>
+
+        <div class="color-picker">
+            <label for="label3-color">Label 3:</label>
+            <input type="color" id="label3-color" value="#0000ff">
+        </div>
+
+        <!-- Кнопки для застосування введених кольорів та для відміни -->
+        <div>
+            <button class="button" id="confirm-colors">Proceed</button>
+            <button class="button close-button" id="close-color">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Імпорт та використання коду для даної сторінки.
+ Page3.js - головний файл  для управління цією сторінкою -->
+<script src="../../JavaScript/pageHandlers/page3.js"></script>
+<script src="../../JavaScript/modules/chartDataSave.js"></script>
+<script src="../../JavaScript/modules/DarkLightModeChanger.js"></script>
+
+</body>
+</html>
+

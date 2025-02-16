@@ -1,0 +1,68 @@
+<!-- Сторінка 2: для вибору типу чарту -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Імпорт CSS стилів(таблиць стилів з файлів), оптимізація та деталі до сторінки -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Charttol - Professional data visualization. Page 2: Choosing Graph Type.">
+    <meta name="keywords" content="Charts, generation, tool, visualization, data visualization, choosing chart, chart types, special type, page two, charttol">
+    <meta name="author" content="Dmytro Bondarchuk">
+
+    <!-- Назва вкладки, видима при відкритті сайту -->
+    <title>ChartTol</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../CSS/main.css">
+    <link rel="stylesheet" href="../../CSS/charts.css">
+    <link rel="stylesheet" href="../../CSS/buttons.css">
+    <link rel="stylesheet" href="../../CSS/Page-Exclusive%20Styles/page1Styles.css">
+    <link rel="stylesheet" href="../../CSS/Page-Exclusive%20Styles/page2Styles.css">
+</head>
+<body>
+
+<header>
+    <h1 id="web-title">ChartTol</h1>
+    <img class="header-logo-image" src="../../Assets/Icons/HeaderLogo.svg" alt="Charttol - Our Logo">
+    <button id="theme-button" class="material-icons">brightness_4</button> <!-- Імпортується гугл іконка Brightness 4 -->
+</header>
+
+<main>
+    <!-- Контент свмої сторінки -->
+    <section id="page-content">
+        <h2 id="page-header">Choose Graph Type</h2>
+
+        <div id="chart-type-selection-main">
+            <select id="chart-type-selection-bar">
+                <option value="bar">Bar Chart</option>
+                <option value="line">Line Chart</option>
+                <option value="pie">Pie Chart</option>
+            </select>
+        </div>
+
+        <!-- Кнопки навігації(Next, Back) -->
+        <div id="button-container">
+            <button id="back-button" class="navigation-button">Back</button>
+            <button id="next-button" class="navigation-button" style="margin-right: 11px;">Next</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <!-- Нижній футер з додатковою інформацією про розробника -->
+    <p>Made by Dmytro Bondarchuk</p>
+</footer>
+
+<!-- Імпорт та використання коду для даної сторінки.
+ Page2.js - головний файл  для управління цією(другою) сторінкою -->
+<script src="../../JavaScript/pageHandlers/page2.js"></script>
+<!-- Також імпорт головного скрипту для зміни з темного на світлий режим і навпаки. -->
+<script src="../../JavaScript/modules/DarkLightModeChanger.js"></script>
+
+</body>
+</html>
