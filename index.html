@@ -1,0 +1,84 @@
+﻿<!-- Головна сторінка сайту / Site's main page! -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Мета-теги для надання інформації про сторінку -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Charttol - Professional data visualization.">
+    <meta name="keywords" content="Charts, generation, tool, main page, file, upload, data, data parser, new, website">
+    <meta name="author" content="Dmytro Bondarchuk">
+
+    <!-- Назва сторінки -->
+    <title>ChartTol - Home</title>
+
+    <!-- Імпорт іконок та шрифтів -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Імпорт зовнішніх CSS -->
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/charts.css">
+    <link rel="stylesheet" href="CSS/buttons.css">
+    <link rel="stylesheet" href="CSS/Page-Exclusive%20Styles/page1Styles.css">
+    <link rel="stylesheet" href="CSS/Page-Exclusive%20Styles/page2Styles.css">
+</head>
+<body>
+
+<header>
+    <!-- Заголовок та верх сторінки -->
+    <h1 id="web-title">ChartTol</h1>
+    <img class="header-logo-image" src="Assets/Icons/HeaderLogo.svg" alt="Charttol - Our Logo">
+    <button id="theme-button" class="material-icons">brightness_4</button>
+</header>
+
+<main>
+    <!-- Контент свмої сторінки -->
+    <section id="page-content">
+        <h2 id="page-header">Upload Your Data</h2>
+        <!-- Секція для імпорту файлів -->
+        <div id="file-drop-area">
+            <p class="file-upload-tip" id="page-header2">Drag & Drop your file here:</p>
+            <p id="file-chosen-text" class="chosen-file-tip">Chosen File: <span id="chosen-file"></span></p>
+
+            <input type="file" id="file-insert" accept=".csv, .xls, .xlsx, .json, .txt" style="display: none;">
+            <label class="button" id="choose-file-button" for="file-insert">Choose File</label>
+        </div>
+
+        <!-- Поле для введення ручних даних -->
+        <div id="manual-data-enter-field">
+            <h3 style="color: white; text-align: center" id="page-header3">Or Enter Data Manually</h3>
+            <textarea id="manual-data" rows="5" placeholder="Enter your data here...
+Enter label + value here.
+And write each from a new string. Here's a full example:
+cats: 50
+dogs: 30"></textarea>
+        </div>
+        <div id="supported-formats-info">
+            <p>Supported formats: CSV, Excel, JSON; For Manual Data: Docx, TXT(In Progress).</p>
+        </div>
+        <button id="next-button" style="float: right; height: 45px; width: 120px; margin-top: -40px" disabled>Next</button>
+        <button id="cancel-button" style="float: right; height: 45px; width: 120px; margin-top: -40px; display: none;">Cancel</button>
+    </section>
+</main>
+
+<footer>
+    <!-- Нижній футер з додатковою інформацією про розробника -->
+    <p>Made by Dmytro Bondarchuk</p>
+</footer>
+
+<!-- Імпорт та використання коду для даної сторінки.
+ Page1.js - головний файл  для управління цією сторінкою -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script> <!-- Бібліотека XLSX -->
+
+<script src="JavaScript/modules/fileUpload.js"></script>
+<script src="JavaScript/modules/DarkLightModeChanger.js"></script>
+<script src="JavaScript/pageHandlers/page1.js"></script>
+
+</body>
+</html>
+
+
