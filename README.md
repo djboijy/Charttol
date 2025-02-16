@@ -1,1 +1,1 @@
-# MORE INFO SOON. NOW ITS EMPTY HERE. 
+﻿# Зробив Бондарчук Дмитро, поки тут пусто.
