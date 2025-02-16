@@ -1,0 +1,107 @@
+﻿#chart-type-selection-main {
+    text-align: center; 
+    margin-top: 20px;
+}
+
+#customization-panel {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border: solid 1px #e0e0e0; 
+    border-radius: 8px; 
+    padding: 20px; 
+}
+
+#customization-panel label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #0056A2;
+    font-weight: bold; 
+}
+
+#customization-panel input,
+#customization-panel select {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 10px;
+    border: 1px solid #33495c; 
+    border-radius: 4px; 
+    transition: border-color 0.3s; 
+}
+
+#customization-panel input:focus,
+#customization-panel select:focus {
+    border-color: #003366; 
+    outline: none;
+}
+
+#export-section {
+    margin-top: 15px; 
+}
+
+#export-section button {
+    background-color: #304d67; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+#export-section button:hover {
+    background-color: #003366; 
+}
+
+#export-section button:not(:last-child) {
+    margin-right: 10px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #61dafb;
+}
+
+input, select, button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 200px;
+}
+
+button {
+    background-color: #61dafb;
+    border: none;
+    color: #282c34;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #21a1f1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #61dafb;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #61dafb;
+}
+
+#chart-type {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
