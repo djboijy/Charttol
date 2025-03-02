@@ -1,14 +1,13 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("theme-button");
+    const modeToggleButton = document.getElementById("theme-button");
 
-    // Make light mode the default unless dark mode was enabled before
+    // Перевірка на режим
     if (localStorage.getItem("darkMode") === "enabled") {
         applyDarkModeStyles();
     } else {
         applyLightModeStyles();
     }
 
-    // Function to toggle dark mode
     function ToggleDarkMode() {
         if (document.body.classList.contains("dark-mode")) {
             applyLightModeStyles();
@@ -23,6 +22,7 @@
         document.body.classList.add("dark-mode");
         document.documentElement.classList.add("dark-mode");
 
+        // Елементи для яких треба змінити CSS
         const elementsToChange = [
             document.getElementById("web-title"),
             document.getElementById("page-header"),
@@ -44,7 +44,7 @@
         textInputs.forEach(input => input?.classList.add("dark-mode-input"));
         buttons.forEach(button => button?.classList.add("dark-mode-bg"));
 
-        toggleButton.innerHTML = "brightness_7";
+        modeToggleButton.innerHTML = "brightness_7";
         document.body.style.setProperty("background", "linear-gradient(90deg, #000000, #373739)", "important");
     }
 
@@ -73,9 +73,9 @@
         textInputs.forEach(input => input?.classList.remove("dark-mode-input"));
         buttons.forEach(button => button?.classList.remove("dark-mode-bg"));
 
-        toggleButton.innerHTML = "brightness_4";
+        modeToggleButton.innerHTML = "brightness_4";
         document.body.style.setProperty("background", "linear-gradient(90deg, #0b7fe6, #08a4e6)", "important");
     }
 
-    toggleButton.onclick = ToggleDarkMode;
+    modeToggleButton.onclick = ToggleDarkMode; // Присвоюємо кнопці тоглу її функцію
 });

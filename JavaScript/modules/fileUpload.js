@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
             checkData();
         };
 
-        // Завантаження руних даних навіть при перезавантаженні
+        // Завантаження ручних даних навіть при перезавантаженні (window.onload())
         function loadManualData() {
             const savedData = sessionStorage.getItem("manualData");
 
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 let filenameDisplay = file.name;
 
-                // Якщо ім'я завелике
+                // Якщо ім'я завелике (спеціальний випадок - додаток)
                 if (file.name.length > 20) {
                     filenameDisplay = file.name.slice(0, 17) + "..." + fileExtension;
                 }
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
             checkData();
         });
 
-        // Збереження ручниз даниз після введення
+        // Збереження ручних даних після введення
         manualDataInput.addEventListener("input", () => {
             sessionStorage.setItem("manualData", manualDataInput.value);
             checkData();
@@ -85,19 +85,19 @@ document.addEventListener("DOMContentLoaded", function() {
             const manualData = { labels: [], values: [] };
 
             manualDataInput.value.trim().split("\n").forEach(line => { // ПОвне забирання пробілів та іншого
-                const parts = line.split(":"); // Розділяємо рядок по двокрапкам для "keyvalue" пари, типу такого
+                const parts = line.split(":"); // Розділяємо рядок по двокрапкам для "keyvalue" пари
 
-                // Частини - лейбл і число
-                const label = parts[0] ? parts[0].trim() : "";
-                const value = parts[1] ? parts[1].trim() : "";
+                // Частини - лейбл і число(значення)
+                const label = parts[0] ? parts[0].trim() : ""; // Що іде ПЕРЕД двокрапкою
+                const value = parts[1] ? parts[1].trim() : ""; // Що іде ПІСЛЯ двокрапки
 
                 if (label !== "" && value !== "" && !isNaN(value)) { // перевірка
                     manualData.labels.push(label);
-                    manualData.values.push(Number(value));
+                    manualData.values.push(Number(value)); // +конверт в число
                 }
             });
 
-            sessionStorage.setItem("manualDataDict", JSON.stringify(manualData));
+            sessionStorage.setItem("manualDataDict", JSON.stringify(manualData)); //
             window.location.href = "../../Assets/HTMLPages/page2.html";
         });
 
@@ -114,23 +114,18 @@ document.addEventListener("DOMContentLoaded", function() {
             checkData();
         });
 
-        // Файл інпут
-        fileInput.addEventListener("change", (event) => {
-            const file = event.target.files[0];
+        fileInput.addEventListener("change", async (event) => {
+            const file = event.target.files[0]; // Підвантажений файл
 
             if (file) {
-                // Управління файлом
-                handleFileUpload(file)
-                    .then((data) => {
-                        localStorage.setItem("chartData", JSON.stringify(data));
+                try {
+                    const data = await handleFileUpload(file); // Обробка файлу з нашою функцією
+                    localStorage.setItem("chartData", JSON.stringify(data)); // Збереження даних з чарту.
 
-                        console.log("Data From File: ", data); // Debug log
-                    })
-
-                    .catch((error) => {
-                        alert(error);
-                    });
-
+                    console.log("Data From File: ", data);
+                } catch (error) {
+                    alert(error);
+                }
             }
         });
     }
