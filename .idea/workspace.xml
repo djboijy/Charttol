@@ -7,8 +7,7 @@
     <list default="true" id="081d9527-6912-4f52-a7a5-6bb620badc70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HTMLPages/FileResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HTMLPages/FileResults.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/modules/DarkLightModeChanger.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/modules/DarkLightModeChanger.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScript/pageHandlers/page4.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/pageHandlers/FileVisualizationMain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HTMLPages/ManualResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HTMLPages/ManualResults.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,8 @@
       <workItem from="1739711888745" duration="1213000" />
       <workItem from="1739964911658" duration="1346000" />
       <workItem from="1740603292578" duration="9000" />
-      <workItem from="1740833730559" duration="2314000" />
+      <workItem from="1740833730559" duration="2439000" />
+      <workItem from="1740922835497" duration="950000" />
     </task>
     <servers />
   </component>
