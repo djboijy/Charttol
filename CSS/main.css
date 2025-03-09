@@ -247,13 +247,33 @@ header h1 {
     margin-right: 60px;
 }
 
+#faq-button {
+    font-size: 36px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    background: transparent;
+    color: #ffffff;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-right: 60px;
+}
+
 #theme-button:hover {
     color: #ffd100;
     box-shadow: 0 0 15px #ffd100, 0 0 30px #ffd100;
     transform: scale(1.1);
 }
 
+#faq-button:hover {
+    color: #ffd100;
+    box-shadow: 0 0 15px #ffd100, 0 0 30px #ffd100;
+    transform: scale(1.1);
+}
+
 #theme-button:active {
+    transform: scale(0.95);
+}
+
+#faq-button:active {
     transform: scale(0.95);
 }
 

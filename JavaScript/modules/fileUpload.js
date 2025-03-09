@@ -1,6 +1,5 @@
 ﻿// На повному завантаженні HTML
 document.addEventListener("DOMContentLoaded", function() {
-    // Змінні з сторінки
     const fileInput = document.getElementById("file-insert");
     const manualDataInput = document.getElementById("manual-data");
 

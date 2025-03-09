@@ -16,6 +16,7 @@
 
     <!-- Імпорт іконок та шрифтів -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -32,6 +33,7 @@
     <!-- Заголовок та верх сторінки -->
     <h1 id="web-title">ChartTol</h1>
     <img class="header-logo-image" src="Assets/Icons/HeaderLogo.svg" alt="Charttol - Our Logo">
+    <button id="faq-button" class="material-icons" style="margin-left: 1000px">help</button>
     <button id="theme-button" class="material-icons">brightness_4</button>
 </header>
 
@@ -44,7 +46,7 @@
             <p class="file-upload-tip" id="page-header2">Drag & Drop your file here:</p>
             <p id="file-chosen-text" class="chosen-file-tip">Chosen File: <span id="chosen-file"></span></p>
 
-            <input type="file" id="file-insert" accept=".csv, .xls, .xlsx, .json, .txt" style="display: none;">
+            <input type="file" id="file-insert" accept=".csv, .xls, .xlsx, .json, .txt, .docx" style="display: none;">
             <label class="button" id="choose-file-button" for="file-insert">Choose File</label>
         </div>
 

@@ -22,9 +22,9 @@
         document.body.classList.add("dark-mode");
         document.documentElement.classList.add("dark-mode");
 
+        const mainTitle = document.getElementById("web-title");
         // Елементи для яких треба змінити CSS
         const elementsToChange = [
-            document.getElementById("web-title"),
             document.getElementById("page-header"),
             document.getElementById("page-header2"),
             document.getElementById("page-header3"),
@@ -41,16 +41,20 @@
         const buttons = document.querySelectorAll(".button");
 
         elementsToChange.forEach(element => element?.classList.add("dark-mode-bg"));
+
         textInputs.forEach(input => input?.classList.add("dark-mode-input"));
         buttons.forEach(button => button?.classList.add("dark-mode-bg"));
 
         modeToggleButton.innerHTML = "brightness_7";
+        mainTitle.style.color = "white";
         document.body.style.setProperty("background", "linear-gradient(90deg, #000000, #373739)", "important");
     }
 
     function applyLightModeStyles() {
         document.body.classList.remove("dark-mode");
         document.documentElement.classList.remove("dark-mode");
+
+        const mainTitle = document.getElementById("web-title");
 
         const elementsToChange = [
             document.getElementById("web-title"),
@@ -74,6 +78,7 @@
         buttons.forEach(button => button?.classList.remove("dark-mode-bg"));
 
         modeToggleButton.innerHTML = "brightness_4";
+        mainTitle.removeAttribute("style");
         document.body.style.setProperty("background", "linear-gradient(90deg, #0b7fe6, #08a4e6)", "important");
     }
 
