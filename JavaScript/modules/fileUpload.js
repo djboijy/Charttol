@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextButton = document.getElementById("next-button");
     const cancelButton = document.getElementById("cancel-button");
 
-    const importedFileName = document.getElementById("chosen-file");
+    const importedFilename = document.getElementById("chosen-file");
     const fileChosenText = document.getElementById("file-chosen-text");
 
     // Перевірка чи існують елементи з якими ми працюємо
@@ -51,22 +51,22 @@ document.addEventListener("DOMContentLoaded", function() {
             const file = fileInput.files[0];
 
             if (file) {
-                const fileExtension = file.name.split(".").pop();
+                const fileExt = file.name.split(".").pop();
 
                 let filenameDisplay = file.name;
 
                 // Якщо ім'я завелике (спеціальний випадок - додаток)
                 if (file.name.length > 20) {
-                    filenameDisplay = file.name.slice(0, 17) + "..." + fileExtension;
+                    filenameDisplay = file.name.slice(0, 17) + "..." + fileExt;
                 }
 
-                importedFileName.textContent = filenameDisplay;
+                importedFilename.textContent = filenameDisplay;
 
                 sessionStorage.setItem("uploadedFile", file.name);
                 manualDataInput.value = "";
                 sessionStorage.removeItem("manualData");
             } else {
-                importedFileName.textContent = "";
+                importedFilename.textContent = "";
                 sessionStorage.removeItem("uploadedFile");
             }
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         nextButton.addEventListener("click", () => {
             const manualData = { labels: [], values: [] };
 
-            manualDataInput.value.trim().split("\n").forEach(line => { // ПОвне забирання пробілів та іншого
+            manualDataInput.value.trim().split("\n").forEach(line => { // ПОвне забирання пробілів та рядкових відступів
                 const parts = line.split(":"); // Розділяємо рядок по двокрапкам для "keyvalue" пари
 
                 // Частини - лейбл і число(значення)
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
         cancelButton.addEventListener("click", () => {
             fileInput.value = "";
             manualDataInput.value = "";
-            importedFileName.textContent = "";
+            importedFilename.textContent = "";
 
             sessionStorage.removeItem("manualData");
             sessionStorage.removeItem("manualDataDict");
@@ -123,8 +123,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     console.log("Data From File: ", data);
                 } catch (error) {
-                    alert(error);
+                    alert("Error while processing your file! " + error);
                 }
+            }
+            else {
+                alert("Please, choose a file!")
             }
         });
     }
@@ -133,18 +136,16 @@ document.addEventListener("DOMContentLoaded", function() {
         return new Promise((fulfill, reject) => {
             const fileReader = new FileReader();
 
-            fileReader.onload = (event) => {
-                const content = event.target.result; // вміст файлу, який зчитав FileReader
+            fileReader.onload = function(event) {
+                let arrayBuffer = event.target.result
 
-                const fileExtension = file.name.split('.').pop().toLowerCase();
+                const fileExt = file.name.split('.').pop().toLowerCase();
 
                 // Далі проводиться парсинг
-                if (fileExtension === 'csv') {
-                    fulfill(parseCSV(content));
-                } else if (fileExtension === 'json') {
-                    fulfill(parseJSON(content));
-                } else if (fileExtension === 'xls' || fileExtension === 'xlsx') {
-                    fulfill(parseExcel(content));
+                if (fileExt === 'csv') {
+                    fulfill(parseCSV(arrayBuffer));
+                } else if (fileExt === 'json') {
+                    fulfill(parseJSON(arrayBuffer));
 
                 } else {
                     reject('Unsupported file format! Please upload CSV, JSON, or Excel files.');
@@ -155,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 reject('Error reading file! Please try uploading again.');
             };
 
-            //
+            // Почати зчитування вмісту якщо в нас excel файл
             if (file.name.endsWith('.xls') || file.name.endsWith('.xlsx')) {
                 fileReader.readAsArrayBuffer(file);
             } else {
@@ -247,43 +248,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    function parseExcel(data) {
-        return new Promise((fulfill, reject) => {
-            try {
-                // Читаємо Excel файл
-                const arrayReader = XLSX.read(data, { type: 'array' });
-                const sheet = arrayReader.Sheets[arrayReader.SheetNames[0]];
-
-                const fileDataRows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
-
-                // Перевіряємо, чи є дані
-                if (fileDataRows.length < 2) {
-                    reject("No data found in the excel file!");
-
-                    return;
-                }
-
-                // Витягуємо дані
-                const [header, ...dataRows] = fileDataRows;
-                const labels = dataRows.map(row => row[0]);
-
-                // Обробляємо значення
-                const values = dataRows.map(row => {
-                    const rawValue = row[1];
-                    const parsedValue = parseFloat(rawValue.toString().replace(',', '.'));
-                    return !isNaN(parsedValue) ? parsedValue : 0;
-                });
-
-                console.log("Parsed Excel: ", { labels, values });
-
-                sessionStorage.setItem("chartData", JSON.stringify({ values, labels }));
-                fulfill({ labels, values });
-
-            } catch (error) {
-                reject('Failed to parse the file! Error: ' + error.message);
-            }
-        });
-    }
 });
 
 
