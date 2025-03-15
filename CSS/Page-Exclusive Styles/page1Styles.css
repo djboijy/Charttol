@@ -1,0 +1,113 @@
+﻿#chart-selection {
+    background: linear-gradient(90deg, #0b7fe6, #08a4e6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+#page-header {
+    color: white;
+    text-align: center;
+}
+
+textarea::placeholder {
+    font-weight: bold;
+    font-size: medium;
+    opacity: 0.62;
+}
+
+#chart-type-selection-bar {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 1100px;
+}
+
+#button-container {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 20px;
+}
+
+#file-chosen-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.header-logo-image {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #260ffa;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+}
+
+.navigation-button {
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.navigation-button:hover {
+    background-color: green;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+#next-button {
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: not-allowed;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#next-button:enabled {
+    background-color: green;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 10px; 
+    padding-left: 55px; 
+    font-family: Roboto, sans-serif;
+}
+
+h2 {
+    color: white; 
+    text-align: center;
+}
+
+#chart-customization {
+    background: linear-gradient(90deg, #0b7fe6, #08a4e6); 
+    padding: 20px; 
+    border-radius: 10px;
+}
+

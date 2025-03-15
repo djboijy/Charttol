@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="081d9527-6912-4f52-a7a5-6bb620badc70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HTMLPages/FileResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HTMLPages/FileResults.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HTMLPages/ManualResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HTMLPages/ManualResults.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HTMLPages/page3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HTMLPages/page3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Page-Exclusive Styles/page3Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Page-Exclusive Styles/page3Styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/modules/chartDataSave.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/modules/chartDataSave.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/modules/fileUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/modules/fileUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/pageHandlers/FileVisualizationMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/pageHandlers/FileVisualizationMain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/pageHandlers/page3.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/pageHandlers/page3.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="tsconfig.json" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2mkcqWATZSiwTML0MzH9enn1o4D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Downloads/Нова папка/Assets/HTMLPages&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Downloads\Нова папка\Assets\HTMLPages" />
+      <recent name="C:\Users\Дмитро\MFAProject\Assets\HTMLPages" />
+      <recent name="C:\Users\Дмитро\MFAProject\Assets\Icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Downloads\Нова папка\JavaScript\modules" />
+      <recent name="C:\Users\ASUS\Downloads\Нова папка\CSS" />
+      <recent name="C:\Users\ASUS\Downloads\Нова папка\JavaScript\pageHandlers" />
+      <recent name="C:\Users\ASUS\Downloads\Нова папка" />
+      <recent name="C:\Users\ASUS\Downloads\Нова папка\CSS\Page-Exclusive Styles" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="081d9527-6912-4f52-a7a5-6bb620badc70" name="Changes" comment="" />
+      <created>1727624207113</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727624207113</updated>
+      <workItem from="1727624207966" duration="2244000" />
+      <workItem from="1727681243173" duration="18785000" />
+      <workItem from="1727800983622" duration="7011000" />
+      <workItem from="1727810897862" duration="15000" />
+      <workItem from="1727846861345" duration="22458000" />
+      <workItem from="1727889942165" duration="2875000" />
+      <workItem from="1727893061653" duration="4958000" />
+      <workItem from="1728310910240" duration="11346000" />
+      <workItem from="1728495098362" duration="3055000" />
+      <workItem from="1728540657916" duration="2792000" />
+      <workItem from="1728659807210" duration="909000" />
+      <workItem from="1728734793439" duration="2594000" />
+      <workItem from="1729251732101" duration="3058000" />
+      <workItem from="1729255173921" duration="21000" />
+      <workItem from="1729352282135" duration="5147000" />
+      <workItem from="1729433217611" duration="6023000" />
+      <workItem from="1729672424426" duration="16985000" />
+      <workItem from="1729797292280" duration="999000" />
+      <workItem from="1730317316507" duration="3176000" />
+      <workItem from="1730920936961" duration="1999000" />
+      <workItem from="1731007562988" duration="3976000" />
+      <workItem from="1731048119828" duration="35000" />
+      <workItem from="1731048166062" duration="14416000" />
+      <workItem from="1731690851993" duration="606000" />
+      <workItem from="1734040041615" duration="469000" />
+      <workItem from="1734071633707" duration="2468000" />
+      <workItem from="1734092192582" duration="8534000" />
+      <workItem from="1734107166678" duration="1437000" />
+      <workItem from="1736687522271" duration="4773000" />
+      <workItem from="1737131227287" duration="6918000" />
+      <workItem from="1737192212238" duration="2377000" />
+      <workItem from="1737206182844" duration="17327000" />
+      <workItem from="1737233854869" duration="686000" />
+      <workItem from="1737299234239" duration="1268000" />
+      <workItem from="1737892911348" duration="3000" />
+      <workItem from="1738073433925" duration="1000" />
+      <workItem from="1738783365294" duration="1903000" />
+      <workItem from="1738930216798" duration="4806000" />
+      <workItem from="1738936789115" duration="6123000" />
+      <workItem from="1739022464734" duration="14469000" />
+      <workItem from="1739103945937" duration="5169000" />
+      <workItem from="1739112540635" duration="5271000" />
+      <workItem from="1739123008316" duration="151000" />
+      <workItem from="1739123166097" duration="741000" />
+      <workItem from="1739127352914" duration="2319000" />
+      <workItem from="1739198937826" duration="13333000" />
+      <workItem from="1739255032498" duration="34852000" />
+      <workItem from="1739552906423" duration="9078000" />
+      <workItem from="1739622201978" duration="2308000" />
+      <workItem from="1739626139676" duration="25740000" />
+      <workItem from="1739690210768" duration="996000" />
+      <workItem from="1739711888745" duration="1213000" />
+      <workItem from="1739964911658" duration="1346000" />
+      <workItem from="1740603292578" duration="9000" />
+      <workItem from="1740833730559" duration="2439000" />
+      <workItem from="1740922835497" duration="1166000" />
+      <workItem from="1740924668775" duration="1821000" />
+      <workItem from="1741452288722" duration="609000" />
+      <workItem from="1741546954339" duration="2496000" />
+      <workItem from="1741619396239" duration="9020000" />
+      <workItem from="1741850332603" duration="1543000" />
+      <workItem from="1741890953943" duration="6870000" />
+      <workItem from="1741940994230" duration="9486000" />
+      <workItem from="1741971746085" duration="10144000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

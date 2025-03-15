@@ -1,0 +1,110 @@
+﻿.file-upload-tip {
+    color: white; 
+    font-weight: bold;
+    text-align: center;
+}
+
+.chosen-file-tip {
+    color: white; 
+    font-weight: bold; 
+    display: none;
+}
+
+h3 {
+    color: white; 
+    text-align: center
+}
+
+#next-button {
+    float: right; 
+    height: 45px; 
+    width: 120px; 
+    margin-top: -40px
+}
+
+.header-logo-image {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(1);
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+}
+
+#page-content {
+    background: linear-gradient(90deg, #0b7fe6, #08a4e6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+#file-drop-area {
+    border: 2px dashed white;
+    padding: 30px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    border-radius: 10px;
+}
+
+#file-drop-area p,
+#manual-entry h3,
+#supported-formats-info p {
+    color: white;
+}
+
+#choose-file-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+#next-button {
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: not-allowed;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#next-button:enabled {
+    background-color: green;
+    cursor: pointer;
+}
+
+#cancel-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+#file-chosen-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#choose-file-button {
+    margin-top: 20px;
+}

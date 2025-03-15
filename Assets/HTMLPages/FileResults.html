@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- мета таги -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Charttol - Professional data visualization. Page 4: Results.">
+    <meta name="keywords" content="Charts, generation, tool, professional, data visualization, visualizer, data analysis, results, page 4">
+    <meta name="author" content="Dmytro Bondarchuk">
+
+    <title>ChartTol - Results</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Зовнішні CSS стилі -->
+    <link rel="stylesheet" href="../../CSS/main.css">
+    <link rel="stylesheet" href="../../CSS/charts.css">
+    <link rel="stylesheet" href="../../CSS/buttons.css">
+    <link rel="stylesheet" href="../../CSS/Page-Exclusive%20Styles/page1Styles.css">
+</head>
+
+<body>
+
+<header>
+    <!-- Верх сторінки -->
+    <h1 style="margin: 10px; padding-left: 55px; font-family: Roboto, sans-serif;" id="web-title">Results</h1>
+    <img class="header-logo-image" src="../../Assets/Icons/HeaderLogo.svg" alt="Our Logo">
+    <button id="faq-button" class="material-icons" style="margin-left: 1000px">help</button>
+    <button id="theme-button" class="material-icons">brightness_4</button>
+</header>
+
+<main>
+    <section id="chart-display">
+        <h2 style="color: #78c6c6; text-align: center;" id="data-chart-final-text">Your Data Chart</h2>
+
+        <!-- Канвас для чарту -->
+        <canvas id="chart" width="400" height="200"></canvas>
+
+        <!-- Кнопки для експорту та кнопка повернення назад -->
+        <button id="back-button" style="float: right; height: 47px; width: 120px; margin-top: 22px">Back</button>
+        <button id="export-button" style="float: left; height: 47px; margin-top: 22px;">Export as PNG</button>
+        <button id="export-button2" style="float: left; height: 47px; margin-top: 22px;">Export as SVG</button>
+        <button id="export-button3" style="float: left; height: 47px; margin-top: 22px;">Export as PDF</button>
+        <button id="export-button4" class="navigation-button" style="float: left; height: 47px; margin-top: 22px; width: 200px; margin-left: 50px">Print Chart</button>
+    </section>
+</main>
+
+<footer>
+    <!-- Нижній футер з додатковою інформацією про розробника -->
+    <p>Made by Dmytro Bondarchuk</p>
+</footer>
+
+<!-- Імпорт Бібліотек -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+
+<!-- Хендл скрипт для експорту чартів -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const pngExport = document.getElementById('export-button');
+        const svgExport = document.getElementById('export-button2');
+        const pdfExport = document.getElementById('export-button3');
+        const printButton = document.getElementById('export-button4');
+
+        const chartDisplay = document.getElementById('chart-display');
+
+        const cropFr = { x: 0, y: 0, width: innerWidth - 540, height: 660 };
+
+        pngExport.addEventListener('click', async function () {
+            try {
+                const canv = await html2canvas(chartDisplay, {
+                    x: cropFr.x,
+                    y: cropFr.y,
+                    width: cropFr.width,
+                    height: cropFr.height
+                });
+
+                const data = canv.toDataURL('image/png');
+
+                const aLink = document.createElement('a');
+                aLink.href = data;
+                aLink.download = 'CharttolChartExport.png';
+                aLink.click();
+            } catch (error) {
+                console.error('Error while Exporting PNG! ', error);
+            }
+        });
+
+        svgExport.addEventListener('click', async function () {
+            try {
+                const canv = document.getElementById('chart');
+
+                const data = canv.toDataURL('image/png');
+
+                const width = canv.width;
+                const height = canv.height;
+
+                const svgContent = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+            <image href="${data}" width="${width}" height="${height}" />
+        </svg>`;
+
+                const blob = new Blob([svgContent], { type: 'image/svg+xml' }); // свг
+                const svgDownloadURL = URL.createObjectURL(blob);
+
+                const aLink = document.createElement('a');
+                aLink.href = svgDownloadURL;
+                aLink.download = 'CharttolChartExport.svg';
+                aLink.click();
+
+                URL.revokeObjectURL(svgDownloadURL);
+            } catch (error) {
+                console.error('Error while Exporting SVG! ', error);
+            }
+        });
+
+
+        pdfExport.addEventListener('click', async function () {
+            try {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: 'landscape', // Альбомний формат
+                    unit: 'px',
+                    format: 'a4'
+                });
+
+                const canv = await html2canvas(chartDisplay, { // ВИдобування картинки чарту
+                    scale: 2
+                });
+
+                const data = canv.toDataURL('image/png');
+
+                const width = 800;
+                const height = (canv.height * width) / canv.width;
+
+                pdf.addImage(data, 'PNG', 10, 10, width, height);
+                pdf.save('CharttolChartExport.pdf');
+            } catch (error) {
+                console.error('Error while Exporting PDF! ', error);
+            }
+        });
+
+        printButton.addEventListener('click', async function () {
+            try {
+                const canv = await html2canvas(chartDisplay, {
+                    x: cropFr.x,
+                    y: cropFr.y,
+                    width: cropFr.width,
+                    height: cropFr.height
+                });
+
+                const data = canv.toDataURL('image/png');
+
+                const printWindow = window.open('', 'Charttol - A Data Visualization Website');
+
+                printWindow.document.write(`
+        <html>
+        <head>
+            <style>
+                body { margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; }
+                img { max-width: 100%; max-height: 100vh; object-fit: contain; }
+            </style>
+        </head>
+        <body>
+            <img src="${data}" />
+            <script>
+                window.onload = function() {
+                    window.print();
+                    window.onafterprint = function() { window.close(); }
+                };
+            <\/script>
+        </body>
+        </html>
+    `);
+                printWindow.document.close();
+                printWindow.print();
+            } catch (error) {
+                console.error('Error while Exporting! ', error);
+            }
+        });
+    });
+
+</script>
+
+<!-- Імпорт та використання коду для даної сторінки(крім головного файлу та зміни темного/світлого режимів впринципі нема нічого такого).
+ FileVisualizationMain.js - головний файл  для управління цією(рендер чарту для файлів) сторінкою -->
+<script src="../../JavaScript/modules/DarkLightModeChanger.js"></script>
+<script src="../../JavaScript/pageHandlers/FileVisualizationMain.js"></script>
+
+</body>
+</html>
+
